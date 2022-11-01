@@ -14,6 +14,8 @@ let shopHours = ['6am','7am','8am','9am','10am','11am', '12pm', '1pm', '2pm', '3
 // DOM Manipulation Step 1: Window into the DOM
 // 1st option: document.getElementById ==> method for grabbing tag by its ID
 // 2nd option: document.querySelector ==> first instance of the passed in tag, ID, or class in your HTML
+let seattleSection = document.getElementById('seattle');
+console.dir(seattleSection)
 
 // ! Helper Function - Utilities
 // get from MDN docs
@@ -26,11 +28,23 @@ function randomHourlyCustomers (min, max) {
 
 let seattle = {
   place: 'Seattle',
+  hourlyCustomers: 0,
   minHourlyCustomers : 0,
   maxHourlyCustomers : 0, 
   averageCookiesPerCustomer : 0,
-  hourlyCustomers : 0,
+  setHourlyCustomers : function(){
+    this.hourlyCustomers = randomHourlyCustomers(23, 65);
+  }
   
+    render: function() {
+    let articleElem = document.createElement('article');
+    seattleSection.appendChild(articleElem);
 
+    let h2Elem = document.createElement('h2');
+    h2Elem.textContent = this.place;
+    articleElem.appendChild(h2Elem);
+  }
 }
 // ! Executable Code
+seattle.setHourlyCustomers();
+seattle.render();
