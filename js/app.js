@@ -41,16 +41,7 @@ console.dir(seattleSection);
 
 
 
-function randomCookie(customersArr, cookiesSold) {
-  let cookieAvg = [];
 
-  for (let i = 0; i < customersArr.length; i++) {
-    let randomCookie = Math.ceil(customersArr[i] * cookiesSold);
-    cookieAvg.push(randomCookie);
-  }
-
-  return cookieAvg;
-}
 
 // ! Object Literals
 
@@ -64,7 +55,7 @@ let seattle = {
 
   setHourlyCustomers: function () {
     for (let i = 0; i < shopHours.length; i++){
-      
+
       let randomCus = Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers + 1) + this.minHourlyCustomers);
       console.log(randomCus);
       this.cust.push(randomCus);
@@ -76,30 +67,18 @@ let seattle = {
     for (let i = 0; i < shopHours.length; i++) {
       let oneHour = Math.ceil(this.cust[i] * this.averageCookiesPerCustomer);
       console.log(oneHour);
+      this.cookies.push(oneHour);
     }
   },
 
-  render: function () {
-    this.cookies = randomCookie(seattle.cust, seattle.avgCookieSale);
-
-    let articleElem = document.createElement('article');
-    seattleSection.appendChild(articleElem);
-
-    let h2Elem = document.createElement('h2');
-    h2Elem.textContent = this.place;
-    articleElem.appendChild(h2Elem);
-
-    let pElem = document.createElement('p');
-    pElem.textContent = `${this.place}`;
-    articleElem.appendChild(pElem);
-
-    let ulElem = document.createElement('ul');
-    articleElem.appendChild(ulElem);
-
+  render () {
+    this.setHourlyCustomers();
+    this.cookieEachHour();
+    const list = document.getElementById('seattle');
     for (let i = 0; i < shopHours.length; i++) {
-      let liElem = document.createElement('li');
-      liElem.textContent = shopHours[i];
-      ulElem.appendChild(liElem);
+      let item = document.createElement('li');
+      item.textContent = shopHours[i] + ':' + this.cookies[i] + 'cookies';
+      list.appendChild(item);
     }
   },
 };
@@ -109,4 +88,4 @@ let seattle = {
 // seattle.render();
 
 // seattle.cust = randomHourlyCustomers(seattle.minHourlyCustomers, seattle.maxHourlyCustomers);
-// seattle.render();
+seattle.render();
