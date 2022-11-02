@@ -64,8 +64,18 @@ let seattle = {
 
   setHourlyCustomers: function () {
     for (let i = 0; i < shopHours.length; i++){
+      
       let randomCus = Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers + 1) + this.minHourlyCustomers);
       console.log(randomCus);
+      this.cust.push(randomCus);
+    }
+  },
+
+  cookieEachHour: function () {
+    this.setHourlyCustomers();
+    for (let i = 0; i < shopHours.length; i++) {
+      let oneHour = Math.ceil(this.cust[i] * this.averageCookiesPerCustomer);
+      console.log(oneHour);
     }
   },
 
@@ -98,5 +108,5 @@ let seattle = {
 // seattle.setHourlyCustomers();
 // seattle.render();
 
-seattle.cust = randomHourlyCustomers(seattle.minHourlyCustomers, seattle.maxHourlyCustomers);
-seattle.render();
+// seattle.cust = randomHourlyCustomers(seattle.minHourlyCustomers, seattle.maxHourlyCustomers);
+// seattle.render();
