@@ -1,12 +1,10 @@
 'use strict';
 
-// done: 1 Store the min/max hourly customers,
-// TODO: 2 the average cookies per customer, in object properties.
-// TODO: 3 Use a method of that object to generate a random number of customers per hour. Objects/Math/random
-// TODO: 4 Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated.
-// TODO: 5 Store the results for each location in a separate array… perhaps as a property of the object representing that location.
-// TODO: 6Display the values of each array as unordered lists in the browser.
-// TODO: 7 Calculating the sum of these hourly totals; your output for each location should look like this:
+// done: 1 Create a new branch for today’s lab. Make sure it has all of your changes from lab 06 so that you can extend the functionality.
+// TODO: 2 Replace all object with a single constructor with the ‘new’ keyword.
+// TODO: 3 Replace the lists with a table
+// TODO: 4 Each location should have a separate render() method that creates and appends its row to the table
+// TODO: 5 The header row and footer row are each created in their own stand-alone function
 
 // ! Global Variables + Window into DOM
 
