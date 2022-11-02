@@ -38,7 +38,16 @@ console.dir(seattleSection);
 // }
 
 
+// ! Constuctor
 
+function Shop (location, min, max, avg) {
+  this.place = location;
+  this.minHourlyCustomers = min;
+  this.maxHourlyCustomers = max;
+  this.averageCookiesPerCustomer = avg;
+  this.cust = [];
+  this.cookies = [];
+}
 
 
 // ! Object Literals
