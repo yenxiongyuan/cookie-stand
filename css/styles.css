@@ -1,12 +1,12 @@
 
 
 h1 {
-  font-size: 3vw;
-
+  font-size: 7vw;
+  
 }
 
-h2 {
-  font-size: 2vw;
+li {
+  font-size: 5vw;
 }
 
 table, tr, th, td {
@@ -17,4 +17,10 @@ table, tr, th, td {
 
 form {
   border: 1px solid rgb(243, 38, 38);
+}
+
+section {
+  font-family: 'Crimson Pro', serif;
+  font-size: 25px;
+  background-color: rgb(0, 162, 255);
 }
